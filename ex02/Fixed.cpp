@@ -16,13 +16,11 @@ Fixed::Fixed():_value(0) {}
 
 Fixed::Fixed(const int interger)
 {
-	//fixed_value = x ≪ 8 = x × 256
 	_value = interger << _fractionalBits;
 }
 
 Fixed::Fixed(const float float_point)
 {
-	//fixed_value=round(float_value×2^8)
 	_value = static_cast<int>(roundf(float_point * (1 << _fractionalBits)));
 }
 
@@ -48,7 +46,6 @@ void	Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	//res = value / 256
 	float	result;
 	result = static_cast<float>(_value) / (1 << _fractionalBits);
 	return result;
@@ -56,7 +53,6 @@ float Fixed::toFloat(void) const
 
 int Fixed::toInt(void) const
 {
-	//res = value >> 8;
 	int	result;
 	result = _value >> _fractionalBits;
 	return (result);
