@@ -23,9 +23,9 @@ class Fixed
 		//constructor
 		Fixed();
 		//copy constrcutor
-		Fixed(const Fixed& other);
+		Fixed(const Fixed &other);
 		//copy assignment operator overload
-		Fixed&	operator=(const Fixed& other);
+		Fixed&	operator=(const Fixed &other);
 		//destructor
 		~Fixed();
 		//member functions

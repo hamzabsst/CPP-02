@@ -33,6 +33,7 @@ class Fixed
 		//copy assignment operator overload
 		Fixed&	operator=(const Fixed& other);
 		//overload of the insertion («) operator
+		// Use friend when you need an external function to access private data
 		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 		//destructor
 		~Fixed();
