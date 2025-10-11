@@ -1,5 +1,5 @@
 NAME	= getFixedPoint
-CC		= c++
+CC		= g++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 SRCS 	= main.cpp Fixed.cpp
