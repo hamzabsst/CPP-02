@@ -31,9 +31,33 @@ class Fixed
 		//copy constrcutor
 		Fixed(const Fixed& other);
 		//copy assignment operator overload
-		Fixed&	operator=(const Fixed& other);
+		Fixed&	operator=(const Fixed &other);
 		//overload of the insertion («) operator
 		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
+		//comparison operators
+		bool	operator>(const Fixed &other) const;
+		bool	operator<(const Fixed &other) const;
+		bool	operator>=(const Fixed &other) const;
+		bool	operator<=(const Fixed &other) const;
+		bool	operator==(const Fixed &other) const;
+		bool	operator!=(const Fixed &other) const;
+		//arithmetic operators
+		Fixed	operator+(const Fixed &other);
+		Fixed	operator-(const Fixed &other);
+		Fixed	operator*(const Fixed &other);
+		Fixed	operator/(const Fixed &other);
+		//increment/decrement
+		//pre
+		Fixed&	operator++();
+		Fixed&	operator--();
+		//post
+		Fixed	operator++(int);
+		Fixed	operator--(int);
+		//public overloaded member functions
+		static 			Fixed&	min(Fixed &a, Fixed &b);
+		static const	Fixed&	min(const Fixed &a, const Fixed &b);
+		static			Fixed&	max(Fixed &a, Fixed &b);
+		static const 	Fixed&	max(const Fixed &a, const Fixed &b);
 		//destructor
 		~Fixed();
 		//member functions

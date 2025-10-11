@@ -62,8 +62,112 @@ int Fixed::toInt(void) const
 	return (result);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj)
+std::ostream& operator<<(std::ostream &os, const Fixed &obj)
 {
 	os << obj.toFloat();
 	return os;
+}
+
+bool	Fixed::operator>(const Fixed &other) const
+{
+	if (this->_value > other._value) return true;
+	else return false;
+}
+bool	Fixed::operator<(const Fixed &other) const
+{
+	if (this->_value < other._value) return true;
+	else return false;
+}
+bool	Fixed::operator>=(const Fixed &other) const
+{
+	if (this->_value >= other._value) return true;
+	else return false;
+}
+bool	Fixed::operator<=(const Fixed &other) const
+{
+	if (this->_value <= other._value) return true;
+	else return false;
+}
+bool	Fixed::operator==(const Fixed &other) const
+{
+	if (this->_value == other._value) return true;
+	else return false;
+}
+bool	Fixed::operator!=(const Fixed &other) const
+{
+	if (this->_value != other._value) return true;
+	else return false;
+}
+
+
+Fixed Fixed::operator+(const Fixed &other)
+{
+	Fixed result;
+	result._value = this->_value + other._value;
+	return result;
+}
+Fixed	Fixed::operator-(const Fixed &other)
+{
+	Fixed result;
+	result._value = this->_value - other._value;
+	return result;
+}
+Fixed	Fixed::operator*(const Fixed &other)
+{
+	Fixed result;
+	result._value = this->_value * other._value;
+	result._value = result._value / (1 << _fractionalBits);
+	return result;
+}
+Fixed	Fixed::operator/(const Fixed &other)
+{
+	Fixed result;
+	result._value = this->_value * (1 << _fractionalBits) / other._value;
+	return result;
+}
+
+
+Fixed&	Fixed::operator++()
+{
+	this->_value = this->_value + 1;
+	return *this;
+}
+Fixed&	Fixed::operator--()
+{
+	this->_value = this->_value - 1;
+	return *this;
+}
+Fixed	Fixed::operator++(int)
+{
+	Fixed old = *this;
+	this->_value = this->_value + 1;
+	return old;
+}
+Fixed	Fixed::operator--(int)
+{
+	Fixed old = *this;
+	this->_value = this->_value - 1;
+	return old;
+}
+
+
+Fixed&	Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a._value > b._value) return b;
+	else return a;
+}
+const Fixed&	Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a._value > b._value) return b;
+	else return a;
+}
+Fixed&	Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a._value > b._value) return a;
+	else return b;
+}
+const Fixed&	Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a._value > b._value) return a;
+	else return b;
 }
