@@ -14,25 +14,17 @@
 
 #include <iostream>
 #include <cmath>
-//Copy constructor: Used when creating a new object from an existing one.
-//Copy assignment operator: Used when assigning one existing object to another.
 class Fixed
 {
 	private:
 		int					_value;
 		static const int	_fractionalBits = 8;
 	public:
-		//default constructor
 		Fixed();
-		//int constructor
 		Fixed(const int interger);
-		//float constructor
 		Fixed(const float float_point);
-		//copy constrcutor
 		Fixed(const Fixed& other);
-		//copy assignment operator overload
 		Fixed&	operator=(const Fixed &other);
-		//overload of the insertion («) operator
 		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 		//comparison operators
 		bool	operator>(const Fixed &other) const;
@@ -47,10 +39,8 @@ class Fixed
 		Fixed	operator*(const Fixed &other);
 		Fixed	operator/(const Fixed &other);
 		//increment/decrement
-		//pre
 		Fixed&	operator++();
 		Fixed&	operator--();
-		//post
 		Fixed	operator++(int);
 		Fixed	operator--(int);
 		//public overloaded member functions

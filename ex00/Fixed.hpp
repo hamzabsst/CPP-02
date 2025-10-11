@@ -20,15 +20,10 @@ class Fixed
 		int					_value;
 		static const int	_fractionalBits = 8;
 	public:
-		//constructor
 		Fixed();
-		//copy constrcutor
 		Fixed(const Fixed &other);
-		//copy assignment operator overload
 		Fixed&	operator=(const Fixed &other);
-		//destructor
 		~Fixed();
-		//member functions
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 };

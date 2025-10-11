@@ -14,30 +14,21 @@
 
 #include <iostream>
 #include <cmath>
-//Copy constructor: Used when creating a new object from an existing one.
-//Copy assignment operator: Used when assigning one existing object to another.
+
 class Fixed
 {
 	private:
 		int					_value;
 		static const int	_fractionalBits = 8;
 	public:
-		//default constructor
 		Fixed();
-		//int constructor
 		Fixed(const int interger);
-		//float constructor
 		Fixed(const float float_point);
-		//copy constrcutor
 		Fixed(const Fixed& other);
-		//copy assignment operator overload
 		Fixed&	operator=(const Fixed& other);
-		//overload of the insertion («) operator
-		// Use friend when you need an external function to access private data
 		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
-		//destructor
 		~Fixed();
-		//member functions
+
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
