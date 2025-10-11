@@ -30,8 +30,7 @@ Fixed::Fixed(const Fixed& other):_value(other._value){}
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-	if (this != &other)
-		this->_value = other._value;
+	this->_value = other._value;
 	return *this;
 }
 
