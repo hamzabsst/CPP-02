@@ -6,7 +6,7 @@
 /*   By: hbousset <hbousset@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 12:30:26 by hbousset          #+#    #+#             */
-/*   Updated: 2025/10/11 12:52:51 by hbousset         ###   ########.fr       */
+/*   Updated: 2025/10/12 09:47:04 by hbousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Point::Point(const Point& other):_x(other._x), _y(other._y){}
 
 Point& Point::operator=(const Point &other)
 {
+	(void)other;
 	return *this;
 }
 
