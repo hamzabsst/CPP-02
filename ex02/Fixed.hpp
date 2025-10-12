@@ -25,7 +25,6 @@ class Fixed
 		Fixed(const float float_point);
 		Fixed(const Fixed& other);
 		Fixed&	operator=(const Fixed &other);
-		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 		//comparison operators
 		bool	operator>(const Fixed &other) const;
 		bool	operator<(const Fixed &other) const;
@@ -56,3 +55,4 @@ class Fixed
 		float	toFloat(void) const;
 		int		toInt(void) const;
 };
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
